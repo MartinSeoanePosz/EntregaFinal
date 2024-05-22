@@ -1,0 +1,22 @@
+    <h2 style="margin-top: 20px; text-align: center">Cart Items</h2>
+<div class="productList">
+  {{#each cart.products}}
+    <div class="productCard">
+      <div class="cardProduct__image">
+        {{#if this.productId.thumbnail}}
+          <img src="{{this.productId.thumbnail}}" alt="{{this.productId.title}}" />
+        {{else}}
+          <img src="https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg" alt="No Thumbnail" />
+        {{/if}}
+      </div>
+      <div class="cardProduct__info">
+        <h3>{{this.productId.title}}</h3>
+        <p>{{this.productId.description}}</p>
+        <p>{{this.productId.price}}</p>
+        <p>{{this.productId.stock}}</p>
+        <p>{{this.productId.code}}</p>
+        <p>Quantity: {{this.quantity}}</p>
+      </div>
+    </div>
+  {{/each}}
+</div>

@@ -1,0 +1,48 @@
+<div class="product-list-container">
+  <button class="category-button" data-category="Peripherals">Peripherals</button>
+  <button class="category-button" data-category="Audio">Audio</button>
+  <button class="category-button" data-category="Screens">Screens</button>
+  <button class="category-button" data-category="">All</button>
+</div>
+
+<div class="product-list">
+  {{#each products}}
+    <div class="product-card">
+      <div class="product-card-image">
+        {{#if this.thumbnail}}
+          <img src="{{this.thumbnail}}" alt="{{this.title}}" />
+        {{else}}
+          <img src="https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg" alt="No Thumbnail" />
+        {{/if}}
+      </div>
+      <div class="product-card-info">
+        <h3>{{this.title}}</h3>
+        <p>{{this.description}}</p>
+        <p>${{this.price}}</p>
+        <p>Stock: {{this.stock}}</p>
+        <p>Code: {{this.code}}</p>
+        <p>Category: {{this.category}}</p>
+      </div>
+        <button class="add-to-cart-button" data-product-id="{{this._id}}">Add to Cart</button>
+    </div>
+  {{/each}}
+</div>
+
+<div class="pagination">
+  {{#if hasPrevPage}}
+    <a href="/products?page={{prevPage}}&limit={{limit}}&sortBy={{sortBy}}&sortOrder={{sortOrder}}&category={{selectedCategory}}"><button>Previous</button></a>
+  {{/if}}
+
+  {{#if hasNextPage}}
+    <a href="/products?page={{nextPage}}&limit={{limit}}&sortBy={{sortBy}}&sortOrder={{sortOrder}}&category={{selectedCategory}}"><button>Next</button></a>
+  {{/if}}
+</div>
+<button id="logout-button">Logout</button>
+<button id="chat-button">Chat with us!</button>
+<button id="cart-button">Your Cart</button>
+
+<script>
+  window.user = "{{ user }}";
+  window.role = "{{ role }}";
+  window.cartId = "{{ cartId }}";
+</script>

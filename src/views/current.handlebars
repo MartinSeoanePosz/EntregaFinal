@@ -1,0 +1,19 @@
+<div class="container">
+    <h1>Current User Information</h1>
+    <div class="user-info">
+        <p><strong>Name:</strong> {{ userInfo.firstName }} {{ userInfo.lastName }}</p>
+        <p><strong>Age:</strong> {{ userInfo.age }}</p>
+        <p><strong>Email:</strong> {{ userInfo.email }}</p>
+        <p><strong>Role:</strong> {{ userInfo.role }}</p>
+        <p><strong>Cart Id:</strong> {{userInfo.cart}} </p>
+    </div>
+    <button id="premium-btn">Be Premium!</button>
+    <button id="documents-btn">Your Documents</button>
+</div>
+
+<script>
+    window.uid = "{{ userInfo.id }}";
+</script>
+
+<script src="../js/current.js"></script>
+

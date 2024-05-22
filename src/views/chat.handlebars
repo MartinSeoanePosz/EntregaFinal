@@ -1,0 +1,28 @@
+<div>
+  <div class="chat-container">
+    <div class="chat-header">
+      <h2>Inquiries</h2>
+    </div>
+
+    <div class="chat-window">
+
+      <div id="messageLogs"></div>
+
+    </div>
+
+    <div class="chat-input-container">
+      <input
+        type="text"
+        placeholder="Write your message..."
+        name="message"
+        id="chatBox"
+      />
+    </div>
+  </div>
+
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="../js/chat.js"></script>
+<script>
+    window.user = "{{ user }}";
+</script>
